@@ -1,0 +1,7 @@
+Flask
+Flask-CORS
+python-keycloak
+psycopg2
+python-dotenv
+Authlib
+requests
