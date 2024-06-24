@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: gracjankoscinski/my-backend:latest
+        env:
+        - name: KEYCLOAK_SERVER_URL
+          value: http://keycloak:8080
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "2000m"
+          limits:
+            memory: "160Mi"
+            cpu: "3000m"

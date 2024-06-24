@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  NODE_ENV: development
+  NEXTAUTH_URL: http://localhost:3000
+  NEXTAUTH_URL_INTERNAL: http://frontend:3000
+  KEYCLOAK_AUTH_SERVER_URL: http://keycloak:8080
+  JWK_SET_URI: http://keycloak:8080/realms/keycloak-react-auth/protocol/openid-connect/certs
